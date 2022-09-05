@@ -1,0 +1,153 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+
+
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+#popmake-wrap {
+	width: 70vw; 
+  height: 80vh;
+	margin:1em auto;
+	font-family: sans-serif;
+	font-size: 15px;
+}
+/* wraps */
+.scrollwrap {
+	position: relative;
+	max-height: 70vh;
+	height: 400px;
+	margin-bottom: 1.5em;
+}
+.popupscroll {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-right: 8px;
+	overflow-y: scroll;
+
+}
+/* button */
+.button-green {
+	font-size: 1em;
+	color: #fff;
+	background: #7EB501;
+	padding: .728em 1.62em;
+	border: none;
+	text-align: center;
+	cursor:pointer;
+	min-width: 8em;
+	border-radius: .34em;
+	transition: all .2s ease-out;
+}
+.button-green:hover, .button-green:active {
+	background: #4B9A0C;
+}
+#popmake-wrap .button-green[disabled] {
+	background: #AED15F;
+	cursor: not-allowed;
+}
+
+/* scrollbar redesigned */
+.popupscroll::-webkit-scrollbar {
+	width: 8px;
+	background-color: #eaeaea;
+}
+.popupscroll::-webkit-scrollbar-thumb {
+	border-radius: 1em;
+	background-color: #4B9A0C;
+}
+.popupscroll::-webkit-scrollbar-track {
+	border-radius: 1em;
+	background-color: #eaeaea;
+}
+.popupscroll::-webkit-scrollbar-thumb:hover {
+	background: #4B9A0C;
+}
+.popupscroll::-webkit-scrollbar-thumb:active {
+	background: #4B9A0C;
+}
+
+/* different bg color for mobiles */
+@media(min-width:768px) {
+	.popupscroll::-webkit-scrollbar-thumb {
+		background-color: #818181;
+	}
+}

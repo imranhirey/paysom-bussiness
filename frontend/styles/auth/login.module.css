@@ -1,0 +1,61 @@
+.loginwrapper{
+   
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+   
+}
+.loginbox{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    background-color: blue;
+    overflow: hidden;
+    border-radius: 9px;
+    margin: 7px;
+
+}
+.loginside{
+    flex: 1.5;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: #173030;
+    flex-direction: column;
+
+ 
+
+}
+.imageside{
+    flex: 0.7;
+    background-color: #173030;
+}
+.input{
+    width: 50%;
+    height: 24px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    border: hidden;
+    outline: none;
+    font-size: 20px;
+}
+
+
+.logininfo{
+  
+    border-radius: 7px;
+    color: #8a8a8a;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  
+    
+  
+
+}

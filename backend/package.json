@@ -1,0 +1,42 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "test-inviromentA": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1160.0",
+    "ba64": "^3.0.9",
+    "barcode": "^0.1.0",
+    "body-parser": "^1.20.0",
+    "canvas": "^2.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "gulp-util": "^3.0.8",
+    "gutil": "^1.6.4",
+    "i": "^0.3.7",
+    "jsbarcode": "^3.11.5",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.4",
+    "node-base64-image": "^2.0.4",
+    "nodemailer": "^6.7.5",
+    "nodemailer-express-handlebars": "^5.0.0",
+    "nodemon": "^2.0.18",
+    "npm": "^8.13.1",
+    "qrcode": "^1.5.1",
+    "socket.io": "^4.5.1",
+    "stripe": "^9.11.0",
+    "twilio": "^3.77.3",
+    "uuid": "^8.3.2"
+  }
+}
