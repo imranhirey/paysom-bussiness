@@ -1,6 +1,6 @@
 import axios from "axios";
 // pass headers
-axios.defaults.baseURL='http://localhost:5500/';
+axios.defaults.baseURL='http://144.126.252.62:5500/';
 
 axios.interceptors.request.use((request)=>{
   request.headers.Auth=localStorage.getItem('token')?localStorage.getItem('token'):null;

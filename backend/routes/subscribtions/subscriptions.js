@@ -216,7 +216,7 @@ router.post('/subscribe', async(req, res) => {
                                 console.log('subscription count increased')
                             }
                         })
-                        
+                        /// notify the user that he subscribed somewre including a link that he can cancel it immidiately
                         res.send({
                             status:'success',
                             message:'user subscribed successfully'
@@ -241,6 +241,30 @@ router.post('/subscribe', async(req, res) => {
             message:'user not found'
         })
 
+    }
+})
+
+// get user active subscribtion by userid
+router.get('/getuseractivesubs/:userid',async(req,res)=>{
+    let {userid}=req.params
+    let userk=await Users.findOne({cus_id:userid})
+    if(userk){
+        let subscriptions=[]
+        userk.subscribtions.forEach(sub=>{
+            subscriptions.push(Subscriptions.findOne({sub_id:sub,sub_status:'active'}))
+        })
+        let activeSubscriptions=await Promise.all(subscriptions)
+        res.send({
+            status:'success',
+            message:'active subscriptions found',
+            subscriptions:activeSubscriptions
+        })
+    }
+    else{
+        res.send({
+            status:'error',
+            message:'user not found'
+        })
     }
 })
 router.post('/unsubscribe', async(req, res) => {

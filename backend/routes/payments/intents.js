@@ -72,13 +72,18 @@ router.post('/payintent',async(req,res)=>{
    else{
         // check the token and user id are same or not
       let userka= getuser(token);
+
       // compare the the two emails and if they are same then only proceed
       if (userka.email==user.email){
+         console.log('weare in intnt payments route')
+
          let  userfromdb=await users.findOne({email:user.email})
          // check the user blance is greater than the amount to be paid
       
          let hasenoughbalance=await checkaccountbalance(userfromdb.cus_id,intentinfo.ammount);
+         console.log('has enough blance is ',hasenoughbalance)
          if(hasenoughbalance){
+
             // now detuct the amount from the user account
             let newblance=userfromdb.finanaces.blance-intentinfo.ammount;
             let updateduserblance= await updateuserblance('detuct',userfromdb.cus_id,intentinfo.ammount);
@@ -88,6 +93,7 @@ router.post('/payintent',async(req,res)=>{
             if (updateduserblance.status=='success' && updatedbussinessblance.status=='success'){
                // update the intent status to paid
                let updatedintent=await Paymentintent.updateOne({intent_id:intentid},{status:'paid'});
+               
                // add to the transations list 
                let trx_info = {
                   from:userfromdb,
@@ -99,6 +105,7 @@ router.post('/payintent',async(req,res)=>{
             // add this customer to the list of customers of this bussiness 
             let updatedbussiness= await  account.updateOne({businessid:intentinfo.who.bussinessid},{$push:{customers:userfromdb.cus_id}});
             console.log('kanaa la update gareeyay ',intentinfo.who);
+            // notify the user that he has paid an intent using email or number
                res.send({
                   status:'success',
                   message:'payment intent paid'

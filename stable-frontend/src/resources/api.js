@@ -1,6 +1,6 @@
 import axios from "axios";
 // pass headers
-axios.defaults.baseURL='http://192.168.0.101:5500/';
+axios.defaults.baseURL='http://localhost:5500/';
 
 axios.interceptors.request.use((request)=>{
   request.headers.Auth=localStorage.getItem('token')?localStorage.getItem('token'):null;
@@ -89,5 +89,15 @@ export default class Apicaller {
   get_subscribtions=async(data)=>{
     let res= await axios.post('/subscriptions/getallsub',{accountid:data})
     return res.data
+  }
+  substats=async(bid)=>{ // bid is bussiness  id
+    let res= await axios.get('/microservices/subscribtions/'+bid)
+    return res.data
+
+  }
+  intentstats=async(bid)=>{ // bid is bussiness id
+    let res= await axios.get('/microservices/intents/'+bid)
+    return res.data
+
   }
 }

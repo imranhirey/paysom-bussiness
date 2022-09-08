@@ -15,8 +15,8 @@ router.post(`/:publishkey`,async(req,res)=>{
     let app=await applications.findOne({"appsecretssecrets.publishkey":publishkey})
     console.log('app',app)
     if(app!=null){
-        console.log('app found',app.appsecretssecrets[0].Secretkey)
-        if(app.appsecretssecrets[0].Secretkey==secretkey){
+        console.log('app found',app.appsecretssecrets.Secretkey)
+        if(app.appsecretssecrets.Secretkey==secretkey){
             // add this request to the app requests array
             let request={
                 requestdate:new Date().toISOString(),

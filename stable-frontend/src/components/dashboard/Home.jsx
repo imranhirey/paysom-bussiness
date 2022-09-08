@@ -74,9 +74,11 @@ const Home = () => {
 
             </Box>
             <Box width={500} margin={4} height={500}>
-              <Intentschart/>
+              {/* <Intentschart/> */}
+              
 
 </Box>
+
             
         </div>
     );

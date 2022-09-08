@@ -8,3 +8,4 @@ function makeid(length) {
     return result;
   }
   module.exports=makeid
+

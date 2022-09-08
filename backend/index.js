@@ -32,7 +32,9 @@ app.use('/apps',require('./routes/applications/apps'));
 app.use('/customers',require('./routes/profiders/customesrprofider'));
 app.use('/keys',require('./routes/applications/keyschecker'));
 app.use('/api/intents',require('./routes/applications/intents'));
+app.use('/api/intents',require('./routes/applications/subscribtions'));
 app.use('/subscriptions',require('./routes/subscribtions/subscriptions'));
+app.use('/microservices',require('./routes/microservices/index'));
 
 
 
