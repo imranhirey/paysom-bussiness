@@ -70,10 +70,13 @@ router.post('/payintent',async(req,res)=>{
 
 
    else{
+      console.log('first step')
         // check the token and user id are same or not
       let userka= getuser(token);
+      console.log('token',token,userka,'halka ',user )
 
       // compare the the two emails and if they are same then only proceed
+      console.log(userka.email,user.email)
       if (userka.email==user.email){
          console.log('weare in intnt payments route')
 

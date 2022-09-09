@@ -22,8 +22,8 @@ let qrCode=await QRCode.toDataURL(paymentIntentId,{
 // convert base64 to buffer and then save it to db 
 let res= saveImage(qrCode,paymentIntentId);
 console.log(res)
-let link='http://localhost:5500/qr/qr'+paymentIntentId+'.png';
-let paymenturl='http://localhost:3001/pay/'+paymentIntentId;
+let link='http://144.126.252.62:5500/qr/qr'+paymentIntentId+'.png';
+let paymenturl='http://144.126.252.62:3001/pay/'+paymentIntentId;
 let  bussinessinfo=await accounts.findOne({businessid:bussinessid})
 console.log('bussinessinfo ',bussinessinfo)
 let paymentinten= new Paymentintent({

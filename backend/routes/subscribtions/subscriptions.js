@@ -38,10 +38,10 @@ router.post('/create',async(req, res) => {
     //////////////
     let {bussinessid,type,amount,name}=req.body
     let subid='SUB'+bussinessid+'_'+type+'_'+Math.floor(Math.random()*100000000000)
-    create(subid,'http://localhost:5500/qr/logo.png',200,200)
+    create(subid,'http://144.126.252.62:5500/qr/logo.png',200,200)
     .then((data)=>{
         let resp= Saveimage(data,subid);
-        let link='http://localhost:5500/qr/qr'+subid+'.png';
+        let link='http://144.126.252.62:5500/qr/qr'+subid+'.png';
         console.log(link)
         let subscription = new Subscriptions({
             sub_id:subid,
